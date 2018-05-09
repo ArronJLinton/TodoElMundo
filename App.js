@@ -21,26 +21,26 @@ import I18n from 'react-native-i18n';
 // type Props = {};
 export default class App extends Component{
 
-  constructor() {
-    super();
-    this.state = { languageCode: 'en' };
-  }
+  // constructor() {
+  //   super();
+    state = { languageCode: 'pt' };
+  // }
 
   componentWillMount() {
-    console.log(I18n.currentLocale())
-    // this.setState({languageCode: I18n.currentLocale()})
+    console.log(I18n.currentLocale().slice(0,2))
+    // this.setState({languageCode: I18n.currentLocale().slice(0,2)})
   }
 
   render() {
     const styles = this.getStyles();
 
-    Translation.setConfig(ProviderTypes.Google, 'AIzaSyB5ip6KC-9KCIjO9Q7Rm47dYJDmOdjLgM0', this.state.languageCode);
+    Translation.setConfig(ProviderTypes.Google, 'AIzaSyCMul48qN-Vahl_m3Q_5gtCUZAA29Zm3AA', this.state.languageCode);
 
 
     return (
       <View style={styles.container}>
         <View style={styles.section}>
-        <PowerTranslator style={styles.p} text={'Hello World'}/>
+        <PowerTranslator style={styles.p} text={"Jose Mourinho believes Brazil and Spain are the teams to beat at the 2018 FIFA World Cup Russia™, but feels the presence of Lionel Messi and Cristiano Ronaldo – and that alone – gives Argentina and Portugal a chance. I really like Brazil’s basic structure – their tactics, mentality,” the Manchester United manager told ESPN Brasil. “There’s a mixture of natural Brazilian talent with a serious, physical, tactical approach. It’s a team capable of defending well, of conceding few goals, with a good support base. And they have an attack with Willian, Neymar, Philippe Coutinho and Gabriel Jesus… all players with exceptional qualities."}/>
         </View>
       </View>
     );
