@@ -34,7 +34,7 @@ export default class App extends Component{
   render() {
     const styles = this.getStyles();
 
-    Translation.setConfig(ProviderTypes.Google, 'AIzaSyCMul48qN-Vahl_m3Q_5gtCUZAA29Zm3AA', this.state.languageCode);
+    Translation.setConfig(ProviderTypes.Google, process.env.googletranslate, this.state.languageCode);
 
 
     return (
